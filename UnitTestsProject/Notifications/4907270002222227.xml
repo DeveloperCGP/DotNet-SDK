@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="3">
+	<message>WorkFlow has finished successfully, for transaction Id: 7953639</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>ccc02a58-c071-4072-9330-f62cb9f9e760</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7953639</transactionId>
+			<respCode>
+				<code>8202</code>
+				<message>Force to challange</message>
+				<uuid>ae878e56_c959_4ded_b79a_656fb609b6cb</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>3dsv2 - processed</message>
+			<operationType>DEBIT</operationType>
+			<paymentDetails>
+				<extraDetails/>
+			</paymentDetails>
+			<service>3DSv2</service>
+			<status>SUCCESS3DS</status>
+			<transactionId>7953639</transactionId>
+			<respCode>
+				<code>8000</code>
+				<message>Successful authentication</message>
+				<uuid>eb705fcd_484d_4071_b1d7_6de3c9202907</uuid>
+			</respCode>
+			<mpi>
+				<acsTransID>9bc792e7-ba4b-4092-bf01-64bc26a573c3</acsTransID>
+				<authMethod>01</authMethod>
+				<authTimestamp>202405160908</authTimestamp>
+				<authenticationStatus>Y</authenticationStatus>
+				<cavv>AJkBB4OBmVFmgYFYFIGZAAAAAAA=</cavv>
+				<eci>05</eci>
+				<messageVersion>2.2.0</messageVersion>
+				<threeDSSessionData>ZmYwZGNhMDItMzFmZS00NDhlLThmNTktZmRmOGQ4NjU0YjU4</threeDSSessionData>
+				<threeDSv2Token>ff0dca02-31fe-448e-8f59-fdf8d8654b58</threeDSv2Token>
+			</mpi>
+			<paymentCode>nsY1</paymentCode>
+			<paymentMessage>Authenticated successfully</paymentMessage>
+		</operation>
+		<operation sorted-order="3">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"00000","resultDescription":"OK","values":{"rfTransactionCurrency":"EUR","rfRTS":"355534686 790190 111114 240516110838","rfContactlessLogo":"false","rfOperationType":"Settle","rfAuthMode":"On","rfDataEntryMode":"Manual","rfCardHolderVerificationMode":"No","rfFuc":"355534686","rfTerminalID":"00000500","rfProcessor":"Redsys","rfMerchantCity":"BARCELONA","rfMerchantPostalCode":"08014","rfMerchantAddress":"GRAN VIA DE LES CORTS CATALANE, 159 PLANTA 7","rfMaskedPan":"************2227","rfOperationDateTime":"16/05/24 11:08:38","rfTerminalOperationNumber":"SM1258X795WW","rfAuthNumber":"238844","rfTransactionAmountCurrency":"12,50 EUR","rfProcessorMessage":"","rfPrintSignatureBox":"false","rfCardPresent":"true","rfReferenceId":"SM1258X795WW","posTransactionToken":"{\"pucIdMsg\":\"1200\",\"pucP3ProcessCode\":\"000000\",\"pucP4OriginalAmount\":\"000000001250\",\"pucP11TransactionNumber\":\"111114\",\"pucP12LocalDateTime\":\"240516110838\",\"pucP22ServicePointData\":\"1U00506K3000\",\"pucP38AuthNumber\":\"238844\",\"pucP39ActionCode\":\"000\",\"pucP53SecurityControlInfo\":\"0102000001000000\",\"pinpadId\":\"1639\",\"pinpadAcquirerId\":\"00000500\",\"pinpadManufacturer\":null,\"pinpadModel\":null,\"pinpadSerialNumber\":null,\"pinpadSoftwareName\":null,\"pinpadSoftwareVersion\":null,\"pinpadKernelEmv\":null,\"pinpadVccStrip\":null,\"pinpadVerPup\":null,\"pinpadPciStage\":null,\"pinpadVerEmvParams\":null,\"pinpadEmvType\":null,\"pinpadCapabilities\":null,\"pinpadLanguage\":null,\"transactionType\":\"O\",\"transactionContactless\":\"0\",\"transactionDcc\":\"0\",\"transactionDccComission\":null,\"transactionDccExchangeRate\":null,\"transactionDccMarkUp\":null,\"transactionDccEntity\":null,\"transactionDccBceExchangeRate\":null,\"transactionDccBceMarkUp\":null,\"transactionPanSequenceNumber\":null,\"transactionTerminalOperationNumber\":\"SM1258X795WW\",\"transactionResponseCode\":null,\"transactionCurrency\":\"978\",\"transactionFuc\":\"355534686\",\"cardMaskedPan\":\"************2227\",\"cardAid\":null,\"cardDdfName\":null,\"cardApplicationLabel\":null,\"cardCypherData\":null}","OperationResult":"000"},"threeDsProtocolVersion":"2.2.0"}</details>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>Success 'Settle' operation</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<paySolTransactionId>355534686 790190 111114 240516110838</paySolTransactionId>
+			<paymentDetails>
+				<cardHolderName>Pablo</cardHolderName>
+				<cardNumber>490727****2227</cardNumber>
+				<cardType>VISA/CREDIT</cardType>
+				<expDate>0230</expDate>
+				<extraDetails>
+					<entry>
+						<key>cardCategory</key>
+						<value>Not Available</value>
+					</entry>
+					<entry>
+						<key>rememberMe</key>
+						<value>false</value>
+					</entry>
+				</extraDetails>
+				<issuerBank>SERVIRED MASTERCARD INTERNACIONAL</issuerBank>
+				<issuerCountry>ES</issuerCountry>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>SUCCESS</status>
+			<transactionId>7953639</transactionId>
+			<respCode>
+				<code>0000</code>
+				<message>Successful</message>
+				<uuid>dd3962db_2f67_4f97_aba2_7086d0eb8b7a</uuid>
+			</respCode>
+			<authCode>238844</authCode>
+			<mpi>
+				<eci>05</eci>
+			</mpi>
+			<paymentCode>000</paymentCode>
+			<paymentMessage>Operación finalizada con éxito</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

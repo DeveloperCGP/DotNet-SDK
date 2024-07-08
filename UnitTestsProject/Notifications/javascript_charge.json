@@ -1,0 +1,119 @@
+{
+    "response": {
+        "workFlowResponse": {
+            "id": 48787,
+            "name": "debit creditcards (TRA)",
+            "version": 0
+        },
+        "status": "SUCCESS",
+        "message": "WorkFlow has finished successfully, for transaction Id: 7833442",
+        "optionalTransactionParams": {},
+        "operationSize": 2,
+        "operationsArray": [
+            {
+                "type": "operation",
+                "sortedOrder": 1,
+                "status": "SUCCESS",
+                "message": null,
+                "payFrexTransactionId": 7833442,
+                "merchantTransactionId": "40527253",
+                "paySolTransactionId": "169673b9-9ab0-43df-bc5a-7cb02df7b9cb",
+                "operationType": "DEBIT",
+                "currency": "EUR",
+                "amount": "30",
+                "paymentSolution": null,
+                "paymentMethod": null,
+                "service": "TRA",
+                "redirectionResponse": null,
+                "redirectionParameters": null,
+                "redirectionParam": null,
+                "details": null,
+                "originalPayFrexTransactionId": null,
+                "originalCurrency": null,
+                "originalAmount": null,
+                "remainingAmount": null,
+                "optionalTransactionParams": null,
+                "checkoutURL": null,
+                "fee": null,
+                "checkFields": null,
+                "statusType3DS": null,
+                "paymentDetails": null,
+                "extraInfo": {},
+                "paymentResponse": null,
+                "authCode": null,
+                "paymentMessage": null,
+                "paymentCode": null,
+                "mpi": null,
+                "subscriptionPlan": null,
+                "rad": null,
+                "respCode": {
+                    "type": "respCode",
+                    "code": "0000",
+                    "message": "Successful",
+                    "uuid": "2e8fd32b_bf6f_4918_875e_01e52d2174b5"
+                }
+            },
+            {
+                "type": "operation",
+                "sortedOrder": 2,
+                "status": "REDIRECTED",
+                "message": "Starting 3DSecure 2.0 process.",
+                "payFrexTransactionId": 1023026,
+                "merchantTransactionId": "40527253",
+                "paySolTransactionId": null,
+                "operationType": "DEBIT",
+                "currency": "EUR",
+                "amount": "30",
+                "paymentSolution": null,
+                "paymentMethod": null,
+                "service": "3DSv2",
+                "redirectionResponse": "redirect:https://checkout.stg-eu-west3.epgint.com/EPGCheckout/rest/online/3dsv2/redirect?action=gatherdevice&params=eyJ0aHJlZURTdjJUb2tlbiI6ImNjNWM1ODJjLWJiOTgtNGIyNS04NjA5LTZkZDI2YzM3MDgwNSIsInRocmVlRFNNZXRob2RVcmwiOiJodHRwczovL21vY2stZHMuc3RnLWV1LXdlc3QzLmVwZ2ludC5jb20vcHVibGljL21ldGhvZC1kYXRhLyIsInRocmVlRFNNZXRob2REYXRhIjoiZXlKMGFISmxaVVJUVTJWeWRtVnlWSEpoYm5OSlJDSTZJbU5qTldNMU9ESmpMV0ppT1RndE5HSXlOUzA0TmpBNUxUWmtaREkyWXpNM01EZ3dOU0lzSUNKMGFISmxaVVJUVFdWMGFHOWtUbTkwYVdacFkyRjBhVzl1VlZKTUlqb2dJbWgwZEhCek9pOHZZMmhsWTJ0dmRYUXVjM1JuTFdWMUxYZGxjM1F6TG1Wd1oybHVkQzVqYjIwdlJWQkhRMmhsWTJ0dmRYUXZZMkZzYkdKaFkyc3ZaMkYwYUdWeVJHVjJhV05sVG05MGFXWnBZMkYwYVc5dUwzQmhlWE52YkM4elpITjJNaTh4TURJek1ESTJJbjA9IiwiYnJhbmQiOiJWSVNBIiwicmVzdW1lQXV0aGVudGljYXRpb24iOiJodHRwczovL2NoZWNrb3V0LnN0Zy1ldS13ZXN0My5lcGdpbnQuY29tL0VQR0NoZWNrb3V0L3JldHVybnVybC9mcmljdGlvbmxlc3MvcGF5c29sLzNkc3YyLzEwMjMwMjY/dGhyZWVEU3YyVG9rZW49Y2M1YzU4MmMtYmI5OC00YjI1LTg2MDktNmRkMjZjMzcwODA1IiwicmVuZGVyQ2FzaGllckxvY2F0aW9uIjoiaHR0cHM6Ly9lcGdqcy1yZW5kZXJjYXNoaWVyLXN0Zy5lYXN5cGF5bWVudGdhdGV3YXkuY29tIiwiY2hhbGxlbmdlV2luZG93c1NpemUiOiIwNSJ9",
+                "redirectionParameters": null,
+                "redirectionParam": null,
+                "details": null,
+                "originalPayFrexTransactionId": 7833442,
+                "originalCurrency": null,
+                "originalAmount": null,
+                "remainingAmount": null,
+                "optionalTransactionParams": {},
+                "checkoutURL": null,
+                "fee": null,
+                "checkFields": null,
+                "statusType3DS": null,
+                "paymentDetails": {
+                    "issuerCountry": null,
+                    "issuerBank": null,
+                    "cardHolderName": "Pablo Navarro",
+                    "cardType": null,
+                    "cardNumber": null,
+                    "account": null,
+                    "cardNumberToken": null,
+                    "expDate": null,
+                    "extraDetails": {
+                        "threeDSMethodData": "eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6ImNjNWM1ODJjLWJiOTgtNGIyNS04NjA5LTZkZDI2YzM3MDgwNSIsICJ0aHJlZURTTWV0aG9kTm90aWZpY2F0aW9uVVJMIjogImh0dHBzOi8vY2hlY2tvdXQuc3RnLWV1LXdlc3QzLmVwZ2ludC5jb20vRVBHQ2hlY2tvdXQvY2FsbGJhY2svZ2F0aGVyRGV2aWNlTm90aWZpY2F0aW9uL3BheXNvbC8zZHN2Mi8xMDIzMDI2In0=",
+                        "threeDSv2Token": "cc5c582c-bb98-4b25-8609-6dd26c370805"
+                    }
+                },
+                "extraInfo": {},
+                "paymentResponse": {
+                    "status": "REDIRECTED",
+                    "message": "Starting 3DSecure 2.0 process.",
+                    "paySolTransactionId": null,
+                    "details": null
+                },
+                "authCode": null,
+                "paymentMessage": null,
+                "paymentCode": null,
+                "mpi": null,
+                "subscriptionPlan": null,
+                "rad": null,
+                "respCode": {
+                    "type": "respCode",
+                    "code": "0000",
+                    "message": "Successful",
+                    "uuid": "2e8fd32b_bf6f_4918_875e_01e52d2174b5"
+                }
+            }
+        ]
+    }
+}

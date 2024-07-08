@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="1">
+	<message>WorkFlow has finished successfully, for transaction Id: 8003726</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>50.0000</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"00000","resultDescription":"OK","values":{"rfTransactionCurrency":"EUR","rfRTS":"355534686 790190 168928 240627140750","rfContactlessLogo":"false","rfOperationType":"Settle","rfAuthMode":"On","rfDataEntryMode":"Manual","rfCardHolderVerificationMode":"No","rfFuc":"355534686","rfTerminalID":"00000500","rfProcessor":"Redsys","rfMerchantCity":"BARCELONA","rfMerchantPostalCode":"08014","rfMerchantAddress":"GRAN VIA DE LES CORTS CATALANE, 159 PLANTA 7","rfMaskedPan":"************2227","rfOperationDateTime":"27/06/24 14:07:50","rfTerminalOperationNumber":"2012","rfAuthNumber":"805660","rfTransactionAmountCurrency":"50,00 EUR","rfProcessorMessage":"","rfPrintSignatureBox":"false","rfCardPresent":"true","rfReferenceId":"2012","posTransactionToken":"{\"pucIdMsg\":\"1200\",\"pucP3ProcessCode\":\"000000\",\"pucP4OriginalAmount\":\"000000005000\",\"pucP11TransactionNumber\":\"168928\",\"pucP12LocalDateTime\":\"240627140750\",\"pucP22ServicePointData\":\"10005060F000\",\"pucP38AuthNumber\":\"805660\",\"pucP39ActionCode\":\"000\",\"pucP53SecurityControlInfo\":\"0102000001000000\",\"pinpadId\":\"1639\",\"pinpadAcquirerId\":\"00000500\",\"pinpadManufacturer\":null,\"pinpadModel\":null,\"pinpadSerialNumber\":null,\"pinpadSoftwareName\":null,\"pinpadSoftwareVersion\":null,\"pinpadKernelEmv\":null,\"pinpadVccStrip\":null,\"pinpadVerPup\":null,\"pinpadPciStage\":null,\"pinpadVerEmvParams\":null,\"pinpadEmvType\":null,\"pinpadCapabilities\":null,\"pinpadLanguage\":null,\"transactionType\":\"O\",\"transactionContactless\":\"0\",\"transactionDcc\":\"0\",\"transactionDccComission\":null,\"transactionDccExchangeRate\":null,\"transactionDccMarkUp\":null,\"transactionDccEntity\":null,\"transactionDccBceExchangeRate\":null,\"transactionDccBceMarkUp\":null,\"transactionPanSequenceNumber\":null,\"transactionTerminalOperationNumber\":\"2012\",\"transactionResponseCode\":null,\"transactionCurrency\":\"978\",\"transactionFuc\":\"355534686\",\"cardMaskedPan\":\"************2227\",\"cardAid\":null,\"cardDdfName\":null,\"cardApplicationLabel\":null,\"cardCypherData\":null}","OperationResult":"000"},"merchantExemptionSca":"MIT"}</details>
+			<merchantTransactionId>EhX6gWUEkbJ9</merchantTransactionId>
+			<message>Success 'Settle' operation</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<paySolTransactionId>355534686 790190 168928 240627140750</paySolTransactionId>
+			<paymentDetails>
+				<cardHolderName>pruebaaa</cardHolderName>
+				<cardNumber>490727****2227</cardNumber>
+				<cardType>VISA/CREDIT</cardType>
+				<expDate>0336</expDate>
+				<extraDetails>
+					<entry>
+						<key>cardCategory</key>
+						<value>Not Available</value>
+					</entry>
+					<entry>
+						<key>rememberMe</key>
+						<value>true</value>
+					</entry>
+				</extraDetails>
+				<issuerBank>SERVIRED MASTERCARD INTERNACIONAL</issuerBank>
+				<issuerCountry>ES</issuerCountry>
+			</paymentDetails>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>SUCCESS</status>
+			<transactionId>8003726</transactionId>
+			<respCode>
+				<code>0000</code>
+				<message>Successful</message>
+				<uuid>ffb307aa_a630_4cf3_8041_b0316b357a17</uuid>
+			</respCode>
+			<authCode>805660</authCode>
+			<paymentCode>000</paymentCode>
+			<paymentMessage>Operación finalizada con éxito</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48808</id>
+		<name>debit creditcards (MIT)</name>
+		<version>23</version>
+	</workFlowResponse>
+</response>

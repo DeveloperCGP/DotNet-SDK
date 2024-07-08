@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="2">
+	<message>WorkFlow has finished successfully, for transaction Id: 7818280</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>76772304</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>e9ef153d-d024-40ed-ac5f-283d486d84c1</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7818280</transactionId>
+			<respCode>
+				<code>8203</code>
+				<message>Frictionless requires</message>
+				<uuid>67cf5c1e_3af8_4683_8575_bd7aae62198c</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>76772304</merchantTransactionId>
+			<message>Starting 3DSecure 2.0 process.</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<originalTransactionId>7818280</originalTransactionId>
+			<paymentDetails>
+				<cardHolderName>First name Last name</cardHolderName>
+				<extraDetails>
+					<entry>
+						<key>threeDSMethodData</key>
+						<value>eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6ImQ1NmEzNTVlLTQ4NjktNDFhNy1iOTRiLTAxNWMwYzVkZTIwNiIsICJ0aHJlZURTTWV0aG9kTm90aWZpY2F0aW9uVVJMIjogImh0dHBzOi8vY2hlY2tvdXQuc3RnLWV1LXdlc3QzLmVwZ2ludC5jb20vRVBHQ2hlY2tvdXQvY2FsbGJhY2svZ2F0aGVyRGV2aWNlTm90aWZpY2F0aW9uL3BheXNvbC8zZHN2Mi8xMDIxNjM2In0=</value>
+					</entry>
+					<entry>
+						<key>threeDSv2Token</key>
+						<value>d56a355e-4869-41a7-b94b-015c0c5de206</value>
+					</entry>
+				</extraDetails>
+			</paymentDetails>
+			<redirectionResponse>redirect:https://checkout.stg-eu-west3.epgint.com/EPGCheckout/rest/online/3dsv2/redirect?action=gatherdevice&amp;params=eyJ0aHJlZURTdjJUb2tlbiI6ImQ1NmEzNTVlLTQ4NjktNDFhNy1iOTRiLTAxNWMwYzVkZTIwNiIsInRocmVlRFNNZXRob2RVcmwiOiJodHRwczovL21vY2stZHMuc3RnLWV1LXdlc3QzLmVwZ2ludC5jb20vcHVibGljL21ldGhvZC1kYXRhLyIsInRocmVlRFNNZXRob2REYXRhIjoiZXlKMGFISmxaVVJUVTJWeWRtVnlWSEpoYm5OSlJDSTZJbVExTm1Fek5UVmxMVFE0TmprdE5ERmhOeTFpT1RSaUxUQXhOV013WXpWa1pUSXdOaUlzSUNKMGFISmxaVVJUVFdWMGFHOWtUbTkwYVdacFkyRjBhVzl1VlZKTUlqb2dJbWgwZEhCek9pOHZZMmhsWTJ0dmRYUXVjM1JuTFdWMUxYZGxjM1F6TG1Wd1oybHVkQzVqYjIwdlJWQkhRMmhsWTJ0dmRYUXZZMkZzYkdKaFkyc3ZaMkYwYUdWeVJHVjJhV05sVG05MGFXWnBZMkYwYVc5dUwzQmhlWE52YkM4elpITjJNaTh4TURJeE5qTTJJbjA9IiwiYnJhbmQiOm51bGwsInJlc3VtZUF1dGhlbnRpY2F0aW9uIjoiaHR0cHM6Ly9jaGVja291dC5zdGctZXUtd2VzdDMuZXBnaW50LmNvbS9FUEdDaGVja291dC9yZXR1cm51cmwvZnJpY3Rpb25sZXNzL3BheXNvbC8zZHN2Mi8xMDIxNjM2P3RocmVlRFN2MlRva2VuPWQ1NmEzNTVlLTQ4NjktNDFhNy1iOTRiLTAxNWMwYzVkZTIwNiIsInJlbmRlckNhc2hpZXJMb2NhdGlvbiI6Imh0dHBzOi8vZXBnanMtcmVuZGVyY2FzaGllci1zdGcuZWFzeXBheW1lbnRnYXRld2F5LmNvbSIsImNoYWxsZW5nZVdpbmRvd3NTaXplIjoiMDUifQ==</redirectionResponse>
+			<service>3DSv2</service>
+			<status>REDIRECTED</status>
+			<transactionId>1021636</transactionId>
+			<respCode>
+				<code>8100</code>
+				<message>Frictionless requires</message>
+				<uuid>33d214d9_d917_477d_bd55_ff00de31a4a2</uuid>
+			</respCode>
+			<mpi>
+				<acsEndProtocolVersion>2.2.0</acsEndProtocolVersion>
+				<acsStartProtocolVersion>2.1.0</acsStartProtocolVersion>
+				<dsEndProtocolVersion>2.2.0</dsEndProtocolVersion>
+				<dsStartProtocolVersion>2.1.0</dsStartProtocolVersion>
+				<threeDSMethodURL>https://mock-ds.stg-eu-west3.epgint.com/public/method-data/</threeDSMethodURL>
+			</mpi>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

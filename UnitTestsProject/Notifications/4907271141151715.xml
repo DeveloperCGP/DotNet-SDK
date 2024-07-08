@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="3">
+	<message>WorkFlow has finished successfully, for transaction Id: 7953663</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>973bea6d-c7a5-42e8-a958-93a2266bcf39</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7953663</transactionId>
+			<respCode>
+				<code>8202</code>
+				<message>Force to challange</message>
+				<uuid>25451cbf_d778_4291_98c8_17dffc0ae19a</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>3dsv2 - processed</message>
+			<operationType>DEBIT</operationType>
+			<paymentDetails>
+				<extraDetails/>
+			</paymentDetails>
+			<service>3DSv2</service>
+			<status>SUCCESS3DS</status>
+			<transactionId>7953663</transactionId>
+			<respCode>
+				<code>8000</code>
+				<message>Successful authentication</message>
+				<uuid>eb705fcd_484d_4071_b1d7_6de3c9202907</uuid>
+			</respCode>
+			<mpi>
+				<acsTransID>534354a9-4add-46b7-a94e-296f7fa4988a</acsTransID>
+				<authMethod>01</authMethod>
+				<authTimestamp>202405160909</authTimestamp>
+				<authenticationStatus>Y</authenticationStatus>
+				<cavv>AJkBB4OBmVFmgYFYFIGZAAAAAAA=</cavv>
+				<eci>05</eci>
+				<messageVersion>2.2.0</messageVersion>
+				<threeDSSessionData>MmE5NmNlM2QtYzg0ZS00MTFkLTljZjQtM2JmOGVlYTQ3OTJi</threeDSSessionData>
+				<threeDSv2Token>2a96ce3d-c84e-411d-9cf4-3bf8eea4792b</threeDSv2Token>
+			</mpi>
+			<paymentCode>nsY1</paymentCode>
+			<paymentMessage>Authenticated successfully</paymentMessage>
+		</operation>
+		<operation sorted-order="3">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"22195","resultDescription":"Additional authentication is required.","values":{"OperationResult":"195"},"threeDsProtocolVersion":"2.2.0"}</details>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>Denied 'Settle' operation with code: 195 message: Control fallback</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<paymentDetails>
+				<cardHolderName>Pablo</cardHolderName>
+				<extraDetails/>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>ERROR</status>
+			<transactionId>7953663</transactionId>
+			<respCode>
+				<code>8888</code>
+				<message>Soft Decline</message>
+				<uuid>f06fa695_1360_4e06_8366_a4f813609355</uuid>
+			</respCode>
+			<mpi>
+				<eci>05</eci>
+			</mpi>
+			<paymentCode>195</paymentCode>
+			<paymentMessage>Control fallback</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

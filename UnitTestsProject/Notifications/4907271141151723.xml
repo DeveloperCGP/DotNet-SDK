@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="3">
+	<message>WorkFlow has finished successfully, for transaction Id: 7953666</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>e4e15b49-c7b3-4086-bef9-f8358a5e5d64</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7953666</transactionId>
+			<respCode>
+				<code>8202</code>
+				<message>Force to challange</message>
+				<uuid>41a001d6_15a0_4d84_99aa_70eb61f6ddac</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>3dsv2 - processed</message>
+			<operationType>DEBIT</operationType>
+			<paymentDetails>
+				<extraDetails/>
+			</paymentDetails>
+			<service>3DSv2</service>
+			<status>SUCCESS3DS</status>
+			<transactionId>7953666</transactionId>
+			<respCode>
+				<code>8000</code>
+				<message>Successful authentication</message>
+				<uuid>eb705fcd_484d_4071_b1d7_6de3c9202907</uuid>
+			</respCode>
+			<mpi>
+				<acsTransID>d972be9e-8eb1-48ed-8c3c-c7a42fb8c440</acsTransID>
+				<authMethod>01</authMethod>
+				<authTimestamp>202405160910</authTimestamp>
+				<authenticationStatus>Y</authenticationStatus>
+				<cavv>AJkBB4OBmVFmgYFYFIGZAAAAAAA=</cavv>
+				<eci>05</eci>
+				<messageVersion>2.2.0</messageVersion>
+				<threeDSSessionData>OWUzMDg2YTktYjk4Mi00NDI3LWI2ZTktNDMxNzM4YzgyZDQ0</threeDSSessionData>
+				<threeDSv2Token>9e3086a9-b982-4427-b6e9-431738c82d44</threeDSv2Token>
+			</mpi>
+			<paymentCode>nsY1</paymentCode>
+			<paymentMessage>Authenticated successfully</paymentMessage>
+		</operation>
+		<operation sorted-order="3">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"21180","resultDescription":"Card not supported.","values":{"OperationResult":"180"},"threeDsProtocolVersion":"2.2.0"}</details>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>Denied 'Settle' operation with code: 180 message: Tarjeta ajena al servicio o no compatible.</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<paymentDetails>
+				<cardHolderName>Pablo</cardHolderName>
+				<extraDetails/>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>ERROR</status>
+			<transactionId>7953666</transactionId>
+			<respCode>
+				<code>1618</code>
+				<message>Card Decline, please check Payment Solution Respond</message>
+				<uuid>7286fa25_ebbc_4aa0_9aba_0c3a21abea5c</uuid>
+			</respCode>
+			<mpi>
+				<eci>05</eci>
+			</mpi>
+			<paymentCode>180</paymentCode>
+			<paymentMessage>Tarjeta ajena al servicio o no compatible.</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

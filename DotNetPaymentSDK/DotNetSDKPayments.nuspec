@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>DotNetSDKPayments</id>
+    <version>1.0.0</version>
+    <authors>Comercia Global Payments</authors>
+    <owners>Comercia Global Payments</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <license type="file">LICENSE.txt</license>
+    <projectUrl>https://github.com/DeveloperCGP/DotNet-SDK</projectUrl>
+    <description>Dot Net Payment SDK for Addon Payments</description>
+    <tags>Payments Comercia</tags>
+    <dependencies>
+      <group targetFramework=".NETCoreApp,Version=v8.0">
+        <dependency id="Microsoft.Extensions.Configuration.Abstractions" version="8.0.0" />
+        <dependency id="Newtonsoft.Json" version="13.0.3" />
+      </group>
+    </dependencies>
+    <repository type="git" url="https://github.com/DeveloperCGP/DotNet-SDK" />
+    <readme>README.md</readme>
+  </metadata>
+  <files>
+    <file src="bin\Release\net8.0\DotNetPaymentSDK.dll" target="lib\net8.0\" />
+    <file src="..\DotNetPayment.Core.Domain\bin\Release\net8.0\DotNetPayment.Core.Domain.dll" target="lib\net8.0\" />
+    <file src="..\DotNetPaymentSDK.Contracts\bin\Release\net8.0\DotNetPaymentSDK.Contracts.dll" target="lib\net8.0\" />
+    <file src="..\DotNetPaymentSDK.Utilities\bin\Release\net8.0\DotNetPaymentSDK.Utilities.dll" target="lib\net8.0\" />
+    <file src="LICENSE.txt" target="LICENSE.txt" />
+    <file src="README.md" target="README.md" />
+  </files>
+</package>

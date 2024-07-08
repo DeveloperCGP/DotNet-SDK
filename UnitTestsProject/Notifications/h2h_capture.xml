@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="1">
+	<operations>
+		<operation sorted-order="1">
+			<amount>30.0</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"00000","resultDescription":"OK","values":{"rfTransactionCurrency":"EUR","rfRTS":"355534686 790190 968336 240212101300","rfContactlessLogo":"false","rfOperationType":"Capture","rfAuthMode":"On","rfDataEntryMode":"Manual","rfCardHolderVerificationMode":"No","rfFuc":"355534686","rfTerminalID":"00000500","rfProcessor":"Redsys","rfMerchantCity":"BARCELONA","rfMerchantPostalCode":"08014","rfMerchantAddress":"GRAN VIA DE LES CORTS CATALANE, 159 PLANTA 7","rfMaskedPan":"************2227","rfOperationDateTime":"12/02/24 10:13:00","rfTerminalOperationNumber":"1094","rfAuthNumber":"776097","rfTransactionAmountCurrency":"30,00 EUR","rfProcessorMessage":"","rfPrintSignatureBox":"false","rfCardPresent":"true","rfReferenceId":"1094","posTransactionToken":"{\"pucIdMsg\":\"1220\",\"pucP3ProcessCode\":\"000000\",\"pucP4OriginalAmount\":\"000000003000\",\"pucP11TransactionNumber\":\"968336\",\"pucP12LocalDateTime\":\"240212101300\",\"pucP22ServicePointData\":\"1U00506K3000\",\"pucP38AuthNumber\":\"776097\",\"pucP39ActionCode\":\"000\",\"pucP53SecurityControlInfo\":\"0102000001000000\",\"pinpadId\":\"1639\",\"pinpadAcquirerId\":\"00000500\",\"pinpadManufacturer\":null,\"pinpadModel\":null,\"pinpadSerialNumber\":null,\"pinpadSoftwareName\":null,\"pinpadSoftwareVersion\":null,\"pinpadKernelEmv\":\"1\",\"pinpadVccStrip\":null,\"pinpadVerPup\":null,\"pinpadPciStage\":null,\"pinpadVerEmvParams\":null,\"pinpadEmvType\":null,\"pinpadCapabilities\":null,\"pinpadLanguage\":null,\"transactionType\":\"O\",\"transactionContactless\":\"0\",\"transactionDcc\":\"0\",\"transactionDccComission\":null,\"transactionDccExchangeRate\":null,\"transactionDccMarkUp\":null,\"transactionDccEntity\":null,\"transactionDccBceExchangeRate\":null,\"transactionDccBceMarkUp\":null,\"transactionPanSequenceNumber\":null,\"transactionTerminalOperationNumber\":\"1094\",\"transactionResponseCode\":null,\"transactionCurrency\":\"978\",\"transactionFuc\":\"355534686\",\"cardMaskedPan\":\"************2227\",\"cardAid\":null,\"cardDdfName\":null,\"cardApplicationLabel\":null,\"cardCypherData\":null}","OperationResult":"000"},"threeDsProtocolVersion":"2.2.0"}</details>
+			<merchantTransactionId>73741844</merchantTransactionId>
+			<message>Success 'Capture' operation</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<originalTransactionId>7831728</originalTransactionId>
+			<paySolTransactionId>355534686 790190 968336 240212101300</paySolTransactionId>
+			<paymentDetails>
+				<cardHolderName>First name Last name</cardHolderName>
+				<cardNumber>490727****2227</cardNumber>
+				<cardNumberToken>6537275043632227</cardNumberToken>
+				<cardType>VISA/CREDIT</cardType>
+				<expDate>0625</expDate>
+				<extraDetails>
+					<entry>
+						<key>cardCategory</key>
+						<value>Not Available</value>
+					</entry>
+					<entry>
+						<key>rememberMe</key>
+						<value>true</value>
+					</entry>
+				</extraDetails>
+				<issuerBank>SERVIRED MASTERCARD INTERNACIONAL</issuerBank>
+				<issuerCountry>ES</issuerCountry>
+			</paymentDetails>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>SUCCESS</status>
+			<transactionId>7831728</transactionId>
+			<respCode>
+				<code>0000</code>
+				<message>Successful</message>
+				<uuid>287a9826_8fdf_4668_a9a4_5470d394d9fd</uuid>
+			</respCode>
+			<authCode>776097</authCode>
+			<mpi>
+				<eci>05</eci>
+			</mpi>
+			<paymentCode>000</paymentCode>
+			<paymentMessage>Operación finalizada con éxito</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+</response>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="2">
+	<message>WorkFlow has finished reaching an ERROR node, for transaction Id: 7953612</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>4e6cfc33-5804-4095-a274-2aaea456f7e8</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7953612</transactionId>
+			<respCode>
+				<code>8202</code>
+				<message>Force to challange</message>
+				<uuid>2ff31a3f_c294_4a63_b32a_3c53d60a899a</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>3dsv2 - processed</message>
+			<operationType>DEBIT</operationType>
+			<paymentDetails>
+				<extraDetails/>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<service>3DSv2</service>
+			<status>ERROR3DS</status>
+			<transactionId>7953612</transactionId>
+			<respCode>
+				<code>8003</code>
+				<message>Authentication not completed. Check Service Response</message>
+				<uuid>b635d062_26ad_4cde_a3ef_a0c202ee194a</uuid>
+			</respCode>
+			<mpi>
+				<acsTransID>e7f5c306-beca-4806-bd66-de15a8d7e3aa</acsTransID>
+				<authMethod>01</authMethod>
+				<authTimestamp>202405160903</authTimestamp>
+				<authenticationStatus>U</authenticationStatus>
+				<messageVersion>2.2.0</messageVersion>
+				<threeDSSessionData>NzNjZWU1YmMtM2I3NS00NDM5LThhMTMtMzYwMjRiODVjNTIw</threeDSSessionData>
+				<threeDSv2Token>73cee5bc-3b75-4439-8a13-36024b85c520</threeDSv2Token>
+			</mpi>
+			<paymentCode>nsU5</paymentCode>
+			<paymentMessage>Not authenticated due to technical or other issue</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>ERROR</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

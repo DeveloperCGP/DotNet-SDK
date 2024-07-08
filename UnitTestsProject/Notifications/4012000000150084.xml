@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="3">
+	<message>WorkFlow has finished successfully, for transaction Id: 7953618</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>5affdda7-1677-44c1-9bd7-b56b56bf018b</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7953618</transactionId>
+			<respCode>
+				<code>8202</code>
+				<message>Force to challange</message>
+				<uuid>fd7aac67_f063_485c_a10c_d34bc670321f</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>Challenge: Authenticated successfully</message>
+			<operationType>DEBIT</operationType>
+			<paymentDetails>
+				<extraDetails/>
+			</paymentDetails>
+			<service>3DSv2</service>
+			<status>SUCCESS3DS</status>
+			<transactionId>7953618</transactionId>
+			<respCode>
+				<code>8000</code>
+				<message>Successful authentication</message>
+				<uuid>eb705fcd_484d_4071_b1d7_6de3c9202907</uuid>
+			</respCode>
+			<mpi>
+				<acsTransID>74be1aac-61a7-4059-9f6a-91d68d8c6427</acsTransID>
+				<authMethod>02</authMethod>
+				<authTimestamp>202405160906</authTimestamp>
+				<authenticationStatus>Y</authenticationStatus>
+				<cavv>AJkBAlQ0Y1czBidENjRjAAAAAAA=</cavv>
+				<eci>05</eci>
+				<messageVersion>2.2.0</messageVersion>
+				<result>eyJ0aHJlZURTU2VydmVyVHJhbnNJRCI6IjQ2YjAyNzg4LWIwYmItNDJlYS1hNTRlLWIyMDYxNzFjNGIxMyIsImFjc1RyYW5zSUQiOiI3NGJlMWFhYy02MWE3LTQwNTktOWY2YS05MWQ2OGQ4YzY0MjciLCJhdXRoZW50aWNhdGlvblR5cGUiOiIwMSIsImF1dGhlbnRpY2F0aW9uTWV0aG9kIjoiMTAiLCJhdXRoZW50aWNhdGlvblZhbHVlIjoiQUprQkFsUTBZMWN6QmlkRU5qUmpBQUFBQUFBPSIsImRzVHJhbnNJRCI6IjE5OWQ3YWM0LTQxNjYtNDIzOC05ZTY3LTg3ZmEzYmY5YWU5OCIsImVjaSI6IjA1IiwiaW50ZXJhY3Rpb25Db3VudGVyIjoiMDEiLCJtZXNzYWdlVHlwZSI6IlJSZXEiLCJtZXNzYWdlVmVyc2lvbiI6IjIuMi4wIiwibWVzc2FnZUNhdGVnb3J5IjoiMDEiLCJ0cmFuc1N0YXR1cyI6IlkifQ==</result>
+				<threeDSv2Token>46b02788-b0bb-42ea-a54e-b206171c4b13</threeDSv2Token>
+			</mpi>
+			<paymentCode>nsY1</paymentCode>
+			<paymentMessage>Authenticated successfully</paymentMessage>
+		</operation>
+		<operation sorted-order="3">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"00000","resultDescription":"OK","values":{"rfTransactionCurrency":"EUR","rfRTS":"355534686 790190 111108 240516110649","rfContactlessLogo":"false","rfOperationType":"Settle","rfAuthMode":"On","rfDataEntryMode":"Manual","rfCardHolderVerificationMode":"No","rfFuc":"355534686","rfTerminalID":"00000500","rfProcessor":"Redsys","rfMerchantCity":"BARCELONA","rfMerchantPostalCode":"08014","rfMerchantAddress":"GRAN VIA DE LES CORTS CATALANE, 159 PLANTA 7","rfMaskedPan":"************0084","rfOperationDateTime":"16/05/24 11:06:49","rfTerminalOperationNumber":"SM1258X795WW","rfAuthNumber":"652319","rfTransactionAmountCurrency":"12,50 EUR","rfProcessorMessage":"","rfPrintSignatureBox":"false","rfCardPresent":"true","rfReferenceId":"SM1258X795WW","posTransactionToken":"{\"pucIdMsg\":\"1200\",\"pucP3ProcessCode\":\"000000\",\"pucP4OriginalAmount\":\"000000001250\",\"pucP11TransactionNumber\":\"111108\",\"pucP12LocalDateTime\":\"240516110649\",\"pucP22ServicePointData\":\"1U00506U3000\",\"pucP38AuthNumber\":\"652319\",\"pucP39ActionCode\":\"000\",\"pucP53SecurityControlInfo\":\"0102000001000000\",\"pinpadId\":\"1639\",\"pinpadAcquirerId\":\"00000500\",\"pinpadManufacturer\":null,\"pinpadModel\":null,\"pinpadSerialNumber\":null,\"pinpadSoftwareName\":null,\"pinpadSoftwareVersion\":null,\"pinpadKernelEmv\":null,\"pinpadVccStrip\":null,\"pinpadVerPup\":null,\"pinpadPciStage\":null,\"pinpadVerEmvParams\":null,\"pinpadEmvType\":null,\"pinpadCapabilities\":null,\"pinpadLanguage\":null,\"transactionType\":\"O\",\"transactionContactless\":\"0\",\"transactionDcc\":\"0\",\"transactionDccComission\":null,\"transactionDccExchangeRate\":null,\"transactionDccMarkUp\":null,\"transactionDccEntity\":null,\"transactionDccBceExchangeRate\":null,\"transactionDccBceMarkUp\":null,\"transactionPanSequenceNumber\":null,\"transactionTerminalOperationNumber\":\"SM1258X795WW\",\"transactionResponseCode\":null,\"transactionCurrency\":\"978\",\"transactionFuc\":\"355534686\",\"cardMaskedPan\":\"************0084\",\"cardAid\":null,\"cardDdfName\":null,\"cardApplicationLabel\":null,\"cardCypherData\":null}","OperationResult":"000"},"threeDsProtocolVersion":"2.2.0"}</details>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>Success 'Settle' operation</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<paySolTransactionId>355534686 790190 111108 240516110649</paySolTransactionId>
+			<paymentDetails>
+				<cardHolderName>Pablo</cardHolderName>
+				<cardNumber>401200****0084</cardNumber>
+				<cardType>visa/credit</cardType>
+				<expDate>0230</expDate>
+				<extraDetails>
+					<entry>
+						<key>cardCategory</key>
+						<value>Not Available</value>
+					</entry>
+					<entry>
+						<key>rememberMe</key>
+						<value>false</value>
+					</entry>
+				</extraDetails>
+				<issuerBank>EXTRAS TEST - VISA</issuerBank>
+				<issuerCountry>ES</issuerCountry>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>SUCCESS</status>
+			<transactionId>7953618</transactionId>
+			<respCode>
+				<code>0000</code>
+				<message>Successful</message>
+				<uuid>dd3962db_2f67_4f97_aba2_7086d0eb8b7a</uuid>
+			</respCode>
+			<authCode>652319</authCode>
+			<mpi>
+				<eci>05</eci>
+			</mpi>
+			<paymentCode>000</paymentCode>
+			<paymentMessage>Operación finalizada con éxito</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

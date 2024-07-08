@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="2">
+	<message>WorkFlow has finished reaching an ERROR node, for transaction Id: 7953615</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>77995c37-73d2-432a-86c0-1c8a391487cf</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7953615</transactionId>
+			<respCode>
+				<code>8202</code>
+				<message>Force to challange</message>
+				<uuid>5e761339_bbe9_40da_956d_3f5112e419fd</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>3dsv2 - processed</message>
+			<operationType>DEBIT</operationType>
+			<paymentDetails>
+				<extraDetails/>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<service>3DSv2</service>
+			<status>ERROR3DS</status>
+			<transactionId>7953615</transactionId>
+			<respCode>
+				<code>8003</code>
+				<message>Authentication not completed. Check Service Response</message>
+				<uuid>95af95ec_e141_4368_8920_bfb0851a677a</uuid>
+			</respCode>
+			<mpi>
+				<acsTransID>68a8f861-efb6-4240-ba7e-e37de03595cd</acsTransID>
+				<authMethod>01</authMethod>
+				<authTimestamp>202405160905</authTimestamp>
+				<authenticationStatus>N</authenticationStatus>
+				<messageVersion>2.2.0</messageVersion>
+				<threeDSSessionData>NWMxOTZkNTgtM2JlNy00YTBlLWJlYjEtM2ZlNDEwODc4YTlm</threeDSSessionData>
+				<threeDSv2Token>5c196d58-3be7-4a0e-beb1-3fe410878a9f</threeDSv2Token>
+			</mpi>
+			<paymentCode>nsN3</paymentCode>
+			<paymentMessage>Not authenticated</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>ERROR</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

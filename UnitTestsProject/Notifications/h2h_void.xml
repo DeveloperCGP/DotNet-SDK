@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="1">
+	<operations>
+		<operation sorted-order="1">
+			<amount>30.0</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"00000","resultDescription":"OK","values":{"rfTransactionCurrency":"EUR","rfRTS":"355534686 790190 968411 240212110838","rfContactlessLogo":"false","rfOperationType":"Void","rfAuthMode":"On","rfDataEntryMode":"Manual","rfCardHolderVerificationMode":"No","rfFuc":"355534686","rfTerminalID":"00000500","rfProcessor":"Redsys","rfMerchantCity":"BARCELONA","rfMerchantPostalCode":"08014","rfMerchantAddress":"GRAN VIA DE LES CORTS CATALANE, 159 PLANTA 7","rfMaskedPan":"","rfOperationDateTime":"12/02/24 11:08:38","rfAuthNumber":"419610","rfTransactionAmountCurrency":"30,00 EUR","rfProcessorMessage":"","rfPrintSignatureBox":"false","rfCardPresent":"true","OperationResult":"000"}}</details>
+			<merchantTransactionId>38559715</merchantTransactionId>
+			<message>Success 'Void' operation</message>
+			<operationType>VOID</operationType>
+			<optionalTransactionParams/>
+			<originalTransactionId>7831800</originalTransactionId>
+			<paySolTransactionId>355534686 790190 968411 240212110838</paySolTransactionId>
+			<paymentDetails>
+				<cardHolderName>First name Last name</cardHolderName>
+				<cardNumber>490727****2227</cardNumber>
+				<cardNumberToken>6537275043632227</cardNumberToken>
+				<cardType>VISA/CREDIT</cardType>
+				<expDate>0625</expDate>
+				<extraDetails>
+					<entry>
+						<key>cardCategory</key>
+						<value>Not Available</value>
+					</entry>
+					<entry>
+						<key>rememberMe</key>
+						<value>true</value>
+					</entry>
+				</extraDetails>
+				<issuerBank>SERVIRED MASTERCARD INTERNACIONAL</issuerBank>
+				<issuerCountry>ES</issuerCountry>
+			</paymentDetails>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>SUCCESS</status>
+			<transactionId>7831806</transactionId>
+			<respCode>
+				<code>0000</code>
+				<message>Successful</message>
+				<uuid>c9d258dc_2902_4dff_9b1d_6ada75d3748d</uuid>
+			</respCode>
+			<authCode>419610</authCode>
+			<paymentCode>000</paymentCode>
+			<paymentMessage>Operación finalizada con éxito</paymentMessage>
+		</operation>
+	</operations>
+</response>

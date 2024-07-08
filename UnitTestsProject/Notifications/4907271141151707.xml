@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<response operation-size="3">
+	<message>WorkFlow has finished successfully, for transaction Id: 7953645</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<paySolTransactionId>4e564b9d-10f2-4387-9191-c66b0c15b354</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+			<transactionId>7953645</transactionId>
+			<respCode>
+				<code>8202</code>
+				<message>Force to challange</message>
+				<uuid>77cc044f_b4b9_4a9f_9693_ff81eda14911</uuid>
+			</respCode>
+		</operation>
+		<operation sorted-order="2">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>3dsv2 - processed</message>
+			<operationType>DEBIT</operationType>
+			<paymentDetails>
+				<extraDetails/>
+			</paymentDetails>
+			<service>3DSv2</service>
+			<status>SUCCESS3DS</status>
+			<transactionId>7953645</transactionId>
+			<respCode>
+				<code>8000</code>
+				<message>Successful authentication</message>
+				<uuid>eb705fcd_484d_4071_b1d7_6de3c9202907</uuid>
+			</respCode>
+			<mpi>
+				<acsTransID>5579c69d-56dd-495f-864b-5665b0580010</acsTransID>
+				<authMethod>01</authMethod>
+				<authTimestamp>202405160909</authTimestamp>
+				<authenticationStatus>Y</authenticationStatus>
+				<cavv>AJkBB4OBmVFmgYFYFIGZAAAAAAA=</cavv>
+				<eci>05</eci>
+				<messageVersion>2.2.0</messageVersion>
+				<threeDSSessionData>MmE0MDdjYWUtYzgxYS00MzNmLTg4ZDUtZWUwYTliMWVkYWZl</threeDSSessionData>
+				<threeDSv2Token>2a407cae-c81a-433f-88d5-ee0a9b1edafe</threeDSv2Token>
+			</mpi>
+			<paymentCode>nsY1</paymentCode>
+			<paymentMessage>Authenticated successfully</paymentMessage>
+		</operation>
+		<operation sorted-order="3">
+			<amount>12.50</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"21190","resultDescription":"Denied for some reasons.","values":{"OperationResult":"190"},"threeDsProtocolVersion":"2.2.0"}</details>
+			<merchantTransactionId>756974</merchantTransactionId>
+			<message>Denied 'Settle' operation with code: 190 message: Denegación del emisor sin especificar motivo</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<paymentDetails>
+				<cardHolderName>Pablo</cardHolderName>
+				<extraDetails/>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>ERROR</status>
+			<transactionId>7953645</transactionId>
+			<respCode>
+				<code>1638</code>
+				<message>Issuer declined the transaction, please check payment solution respond</message>
+				<uuid>4f4e2ab1_9cf6_4a9b_ab2d_4d4f3c9937b1</uuid>
+			</respCode>
+			<mpi>
+				<eci>05</eci>
+			</mpi>
+			<paymentCode>190</paymentCode>
+			<paymentMessage>Denegación del emisor sin especificar motivo</paymentMessage>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</response>

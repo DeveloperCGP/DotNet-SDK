@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<payfrex-response operation-size="3">
+	<message>WorkFlow has finished successfully, for transaction Id: 7998236</message>
+	<operations>
+		<operation sorted-order="1">
+			<amount>50.0000</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>55555555</merchantTransactionId>
+			<operationType>DEBIT</operationType>
+			<payFrexTransactionId>7998236</payFrexTransactionId>
+			<paySolTransactionId>71c4b8ff-2845-4447-b4f1-d78cda1db164</paySolTransactionId>
+			<service>TRA</service>
+			<status>SUCCESS</status>
+		</operation>
+		<operation sorted-order="2">
+			<amount>50.0000</amount>
+			<currency>EUR</currency>
+			<merchantTransactionId>55555555</merchantTransactionId>
+			<message>3dsv2 - processed</message>
+			<operationType>DEBIT</operationType>
+			<payFrexTransactionId>7998236</payFrexTransactionId>
+			<paymentDetails>
+				<cardNumberToken>1330408026032227</cardNumberToken>
+				<extraDetails/>
+			</paymentDetails>
+			<service>3DSv2</service>
+			<status>SUCCESS3DS</status>
+		</operation>
+		<operation sorted-order="3">
+			<amount>50.00</amount>
+			<currency>EUR</currency>
+			<details>{"resultCode":"00000","resultDescription":"OK","values":{"rfTransactionCurrency":"EUR","rfRTS":"355534686 790190 165249 240625111254","rfContactlessLogo":"false","rfOperationType":"Settle","rfAuthMode":"On","rfDataEntryMode":"Manual","rfCardHolderVerificationMode":"No","rfFuc":"355534686","rfTerminalID":"00000500","rfProcessor":"Redsys","rfMerchantCity":"BARCELONA","rfMerchantPostalCode":"08014","rfMerchantAddress":"GRAN VIA DE LES CORTS CATALANE, 159 PLANTA 7","rfMaskedPan":"************2227","rfOperationDateTime":"25/06/24 11:12:54","rfTerminalOperationNumber":"1987","rfAuthNumber":"108336","rfTransactionAmountCurrency":"50,00 EUR","rfProcessorMessage":"","rfPrintSignatureBox":"false","rfCardPresent":"true","rfReferenceId":"1987","posTransactionToken":"{\"pucIdMsg\":\"1200\",\"pucP3ProcessCode\":\"000000\",\"pucP4OriginalAmount\":\"000000005000\",\"pucP11TransactionNumber\":\"165249\",\"pucP12LocalDateTime\":\"240625111254\",\"pucP22ServicePointData\":\"1U00506K3000\",\"pucP38AuthNumber\":\"108336\",\"pucP39ActionCode\":\"000\",\"pucP53SecurityControlInfo\":\"0102000001000000\",\"pinpadId\":\"1639\",\"pinpadAcquirerId\":\"00000500\",\"pinpadManufacturer\":null,\"pinpadModel\":null,\"pinpadSerialNumber\":null,\"pinpadSoftwareName\":null,\"pinpadSoftwareVersion\":null,\"pinpadKernelEmv\":null,\"pinpadVccStrip\":null,\"pinpadVerPup\":null,\"pinpadPciStage\":null,\"pinpadVerEmvParams\":null,\"pinpadEmvType\":null,\"pinpadCapabilities\":null,\"pinpadLanguage\":null,\"transactionType\":\"O\",\"transactionContactless\":\"0\",\"transactionDcc\":\"0\",\"transactionDccComission\":null,\"transactionDccExchangeRate\":null,\"transactionDccMarkUp\":null,\"transactionDccEntity\":null,\"transactionDccBceExchangeRate\":null,\"transactionDccBceMarkUp\":null,\"transactionPanSequenceNumber\":null,\"transactionTerminalOperationNumber\":\"1987\",\"transactionResponseCode\":null,\"transactionCurrency\":\"978\",\"transactionFuc\":\"355534686\",\"cardMaskedPan\":\"************2227\",\"cardAid\":null,\"cardDdfName\":null,\"cardApplicationLabel\":null,\"cardCypherData\":null}","OperationResult":"000"},"threeDsProtocolVersion":"2.2.0"}</details>
+			<merchantTransactionId>55555555</merchantTransactionId>
+			<message>Success 'Settle' operation</message>
+			<operationType>DEBIT</operationType>
+			<optionalTransactionParams/>
+			<payFrexTransactionId>7998236</payFrexTransactionId>
+			<paySolTransactionId>355534686 790190 165249 240625111254</paySolTransactionId>
+			<paymentDetails>
+				<cardHolderName>Pabli</cardHolderName>
+				<cardNumber>490727****2227</cardNumber>
+				<cardNumberToken>1330408026032227</cardNumberToken>
+				<cardType>VISA/CREDIT</cardType>
+				<expDate>1230</expDate>
+				<extraDetails>
+					<entry>
+						<key>cardCategory</key>
+						<value>Not Available</value>
+					</entry>
+					<entry>
+						<key>rememberMe</key>
+						<value>true</value>
+					</entry>
+				</extraDetails>
+				<issuerBank>SERVIRED MASTERCARD INTERNACIONAL</issuerBank>
+				<issuerCountry>ES</issuerCountry>
+			</paymentDetails>
+			<paymentMethod>19900</paymentMethod>
+			<paymentSolution>caixapucpuce</paymentSolution>
+			<status>SUCCESS</status>
+		</operation>
+	</operations>
+	<optionalTransactionParams/>
+	<status>SUCCESS</status>
+	<workFlowResponse>
+		<id>48787</id>
+		<name>debit creditcards (TRA)</name>
+		<version>0</version>
+	</workFlowResponse>
+</payfrex-response>
