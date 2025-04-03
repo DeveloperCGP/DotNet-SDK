@@ -12,7 +12,7 @@ using DotNetPaymentSDK.src.Adapters;
 using System.Collections.Generic;
 using DotNetPaymentSDK.src.Parameters.JS;
 using DotNetPaymentSDK.src.Requests.Utils;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 using DotNetPaymentSDK.src.Exceptions;
 
 namespace DotNetPaymentSDK.Tests

@@ -1,6 +1,7 @@
 using System.Runtime.Serialization;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
-namespace DotNetPaymentSDK.src.Parameters.Notification.Operation
+namespace DotNetPaymentSDK.src.Parameters.Notification.OperationsModels
 {
     [DataContract]
     public class Operations

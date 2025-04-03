@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace DotNetPaymentSDK.src.Parameters.Notification.Operation
+namespace DotNetPaymentSDK.src.Parameters.Notification.OperationsModels
 {
     [DataContract]
     public class Entry

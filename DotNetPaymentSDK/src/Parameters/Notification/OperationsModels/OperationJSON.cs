@@ -1,10 +1,10 @@
 using System.Runtime.Serialization;
 using DotNetPayment.Core.Domain.Enums;
 
-namespace DotNetPaymentSDK.src.Parameters.Notification.Operation
+namespace DotNetPaymentSDK.src.Parameters.Notification.OperationsModels
 {
     [DataContract]
-    public class Operation
+    public class OperationJSON
     {
         [DataMember(Name = "amount", IsRequired = false)]
         public string? Amount { get; set; }

@@ -220,7 +220,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -370,7 +370,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -516,7 +516,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -678,7 +678,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {

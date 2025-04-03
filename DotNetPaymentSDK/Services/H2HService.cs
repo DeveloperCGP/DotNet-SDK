@@ -5,7 +5,7 @@ using DotNetPaymentSDK.src.Adapters;
 using DotNetPaymentSDK.src.Exceptions;
 using DotNetPaymentSDK.src.Parameters;
 using DotNetPaymentSDK.src.Parameters.H2H;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 using DotNetPaymentSDK.src.Requests.Utils;
 using DotNetPaymentSDK.Utilities;
 using System.Text;

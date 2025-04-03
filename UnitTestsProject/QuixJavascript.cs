@@ -12,7 +12,7 @@ using DotNetPaymentSDK.src.Adapters;
 using System.Collections.Generic;
 using DotNetPaymentSDK.src.Parameters.JS;
 using DotNetPaymentSDK.src.Requests.Utils;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 using DotNetPaymentSDK.src.Parameters.Quix_JS;
 using DotNetPaymentSDK.src.Parameters.Quix_Models.Quix_Service;
 using DotNetPaymentSDK.src.Parameters.Quix_Models;
@@ -189,7 +189,7 @@ namespace DotNetPaymentSDK.Tests
 
             Assert.IsNotNull(result);
             Assert.IsNull(result.Item2); // No error message
-            Assert.AreEqual(1, result.Item1.OperationsArray.Count);
+            Assert.AreEqual(1, result.Item1.Operations?.OperationList?.Count);
             Assert.AreEqual("af24252b-e8c9-4fb2-9da2-7a476b2d8cd4", result.Item1.GetNemuruCartHash());
             Assert.AreEqual("62WBmZM44eDS2gZfVbgvEg5Cydea7IcY", result.Item1.GetNemuruAuthToken());
         }
@@ -287,7 +287,7 @@ namespace DotNetPaymentSDK.Tests
 
             Assert.IsNotNull(result);
             Assert.IsNull(result.Item2); // No error message
-            Assert.AreEqual(1, result.Item1.OperationsArray.Count);
+            Assert.AreEqual(1, result.Item1.Operations?.OperationList?.Count);
             Assert.AreEqual("af24252b-e8c9-4fb2-9da2-7a476b2d8cd4", result.Item1.GetNemuruCartHash());
             Assert.AreEqual("62WBmZM44eDS2gZfVbgvEg5Cydea7IcY", result.Item1.GetNemuruAuthToken());
         }
@@ -393,7 +393,7 @@ namespace DotNetPaymentSDK.Tests
 
             Assert.IsNotNull(result);
             Assert.IsNull(result.Item2); // No error message
-            Assert.AreEqual(1, result.Item1.OperationsArray.Count);
+            Assert.AreEqual(1, result.Item1.Operations?.OperationList?.Count);
             Assert.AreEqual("af24252b-e8c9-4fb2-9da2-7a476b2d8cd4", result.Item1.GetNemuruCartHash());
             Assert.AreEqual("62WBmZM44eDS2gZfVbgvEg5Cydea7IcY", result.Item1.GetNemuruAuthToken());
         }
@@ -510,7 +510,7 @@ namespace DotNetPaymentSDK.Tests
 
             Assert.IsNotNull(result);
             Assert.IsNull(result.Item2); // No error message
-            Assert.AreEqual(1, result.Item1.OperationsArray.Count);
+            Assert.AreEqual(1, result.Item1.Operations?.OperationList?.Count);
             Assert.AreEqual("af24252b-e8c9-4fb2-9da2-7a476b2d8cd4", result.Item1.GetNemuruCartHash());
             Assert.AreEqual("62WBmZM44eDS2gZfVbgvEg5Cydea7IcY", result.Item1.GetNemuruAuthToken());
         }
