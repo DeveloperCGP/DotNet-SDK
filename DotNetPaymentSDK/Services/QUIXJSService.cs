@@ -5,7 +5,7 @@ using DotNetPaymentSDK.Interfaces;
 using DotNetPaymentSDK.src.Adapters;
 using DotNetPaymentSDK.src.Exceptions;
 using DotNetPaymentSDK.src.Parameters;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 using DotNetPaymentSDK.src.Parameters.Quix_JS;
 using DotNetPaymentSDK.src.Parameters.Quix_Models.Quix_Accommodation;
 using DotNetPaymentSDK.src.Parameters.Quix_Models.Quix_Flight;

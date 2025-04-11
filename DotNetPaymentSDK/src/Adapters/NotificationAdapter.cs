@@ -1,9 +1,12 @@
 using System.Text.RegularExpressions;
 using System.Xml;
 using System.Xml.Serialization;
-using DotNetPaymentSDK.src.Parameters.Nottification;
-using DotNetPaymentSDK.src.Parameters.NotificationXML;
+using DotNetPaymentSDK.src.Parameters.Notification;
+using DotNetPaymentSDK.src.Parameters.Notification.OperationsModels;
+using DotNetPaymentSDK.src.Parameters.NotificationJSON;
+using DotNetPaymentSDK.src.Parameters.Notification;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace DotNetPaymentSDK.src.Adapters
 {
@@ -38,8 +41,136 @@ namespace DotNetPaymentSDK.src.Adapters
                 }
             }
 
-            return JsonConvert.DeserializeObject<Notification>(notificationString);
+            return ParseJSONNotification(notificationString);
         }
+
+        private static Notification ParseJSONNotification(string jsonString) 
+        {
+            NotificationJSON notificationJSON = JsonConvert.DeserializeObject<NotificationJSON>(jsonString);
+
+            JObject jsonObject = JObject.Parse(jsonString);
+            JToken optionalParamsToken = jsonObject["optionalTransactionParams"];
+
+            Notification notification = new()
+            {
+                Message = notificationJSON.Message,
+                Operations = new() { OperationList = mapResponse(notificationJSON.OperationsArray, jsonObject) },
+                Status = notificationJSON.Status,
+                WorkFlowResponse = notificationJSON.WorkFlowResponse,
+                OptionalTransactionParams = ParseOptionalTransactionParams(optionalParamsToken)
+            };
+
+            return notification;
+        }
+
+        private static List<Operation> mapResponse(List<OperationJSON> operationJSONs, JObject jsonObject) 
+        {
+            return operationJSONs.Select((operation, i) => new Operation()
+            {
+                Amount = operation?.Amount,
+                Currency = operation?.Currency,
+                Details = operation?.Details,
+                MerchantTransactionId = operation?.MerchantTransactionId,
+                PaySolTransactionId = operation?.PaySolTransactionId,
+                Service = operation?.Service,
+                Status = operation?.Status,
+                TransactionId = operation?.TransactionId,
+                RespCode = new()
+                {
+                    Code = operation?.RespCode?.Code,
+                    Message = operation?.RespCode?.Message,
+                    UUID = operation?.RespCode?.UUID,
+                },
+                OperationType = operation?.OperationType,
+                PaymentDetails = new()
+                {
+                    CardNumberToken = operation?.PaymentDetails?.CardNumberToken,
+                    Account = operation?.PaymentDetails?.Account,
+                    CardHolderName = operation?.PaymentDetails?.CardHolderName,
+                    CardNumber = operation?.PaymentDetails?.CardNumber,
+                    CardType = operation?.PaymentDetails?.CardType,
+                    ExpDate = operation?.PaymentDetails?.ExpDate,
+                    IssuerBank = operation?.PaymentDetails?.IssuerBank,
+                    IssuerCountry = operation?.PaymentDetails?.IssuerCountry,
+                    ExtraDetails = mapExtraDetails(jsonObject["operationsArray"][i]["paymentDetails"])
+                },
+                MPI = new()
+                {
+                    AcsTransID = operation?.MPI?.AcsTransID,
+                    AuthMethod = operation?.MPI?.AuthMethod,
+                    AuthTimestamp = operation?.MPI?.AuthTimestamp,
+                    AuthenticationStatus = operation?.MPI?.AuthenticationStatus,
+                    Cavv = operation?.MPI?.Cavv,
+                    Eci = operation?.MPI?.Eci,
+                    MessageVersion = operation?.MPI?.MessageVersion,
+                    ThreeDSSessionData = operation?.MPI?.ThreeDSSessionData,
+                    ThreeDSv2Token = operation?.MPI?.ThreeDSv2Token,
+                },
+                PaymentCode = operation?.PaymentCode,
+                PaymentMessage = operation?.PaymentMessage,
+                Message = operation?.Message,
+                PaymentMethod = operation?.PaymentMethod,
+                PaymentSolution = operation?.PaymentSolution,
+                AuthCode = operation?.AuthCode,
+                Rad = operation?.Rad,
+                RadMessage = operation?.RadMessage,
+                RedirectionResponse = operation?.RedirectionResponse,
+                SubscriptionPlan = operation?.SubscriptionPlan,
+                OptionalTransactionParams = ParseOptionalTransactionParams(jsonObject["operationsArray"][i]["optionalTransactionParams"])
+            }).ToList();
+        }
+
+        private static OptionalTransactionParams ParseOptionalTransactionParams(JToken optionalParamsListToken) 
+        {
+            if (optionalParamsListToken == null || optionalParamsListToken.Type != JTokenType.Object) {
+                return null;
+            }
+
+            var dictionary = optionalParamsListToken.ToObject<Dictionary<string, string>>() ?? [];
+
+            OptionalTransactionParams optionalParams = new()
+            {
+                Entry = []
+            };
+
+            foreach (var kvp in dictionary)
+            {
+                optionalParams.Entry.Add(new() {
+                    Key = kvp.Key,
+                    Value = kvp.Value
+                });
+            }
+
+            return optionalParams;
+        }
+
+
+        private static ExtraDetails mapExtraDetails(JToken jsonObject) 
+        {
+            if (jsonObject == null || jsonObject.Type != JTokenType.Object || jsonObject["extraDetails"] == null) 
+            {
+                return null;                    
+            }
+
+            JToken extraDetailsToken = jsonObject["extraDetails"];
+
+            var dictionary = extraDetailsToken.ToObject<Dictionary<string, string>>() ?? [];
+
+            ExtraDetails extraDetails = new()
+            {
+                Entry = []
+            };
+
+            foreach (var kvp in dictionary)
+            {
+                extraDetails.Entry.Add(new() {
+                    Key = kvp.Key,
+                    Value = kvp.Value
+                });
+            }
+            return extraDetails;
+        }
+
 
         private static Notification ParseXMLNotification(string xmlString)
         {
@@ -47,8 +178,8 @@ namespace DotNetPaymentSDK.src.Adapters
 
             if (rootElementName == "response" || rootElementName == "payfrex-response")
             {
-                Response response = null;
-                XmlSerializer serializer = new XmlSerializer(typeof(Response));
+                Notification response = null;
+                XmlSerializer serializer = new XmlSerializer(typeof(Notification));
 
                 if (rootElementName == "payfrex-response")
                 {
@@ -57,22 +188,10 @@ namespace DotNetPaymentSDK.src.Adapters
 
                 using (StringReader reader = new StringReader(xmlString))
                 {
-                    response = (Response)serializer.Deserialize(reader);
+                    response = (Notification)serializer.Deserialize(reader);
                 }
-
-                Notification notification = new()
-                {
-                    Message = response?.Message,
-                    Status = response?.Status,
-                    OperationsArray = mapResponse(response),
-                    WorkFlowResponse = new()
-                    {
-                        Id = response?.WorkFlowResponse?.Id,
-                        Name = response?.WorkFlowResponse?.Name,
-                        Version = response?.WorkFlowResponse?.Version,
-                    },
-                };
-                return notification;
+                
+                return response;
             }
             else
             {
@@ -102,70 +221,6 @@ namespace DotNetPaymentSDK.src.Adapters
             xmlString = CleanInvalidXmlChars(xmlString);
             xmlDoc.LoadXml(xmlString.Replace("\\", ""));
             return JsonConvert.SerializeXmlNode(xmlDoc);
-        }
-
-        public static List<DotNetPaymentSDK.src.Parameters.Notification.Operation.Operation> mapResponse(Response response)
-        {
-            return response.Operations.Operation.Select(operation => new DotNetPaymentSDK.src.Parameters.Notification.Operation.Operation()
-            {
-                Amount = operation?.Amount,
-                Currency = operation?.Currency,
-                Details = operation?.Details,
-                MerchantTransactionId = operation?.MerchantTransactionId,
-                PaySolTransactionId = operation?.PaySolTransactionId,
-                Service = operation?.Service,
-                Status = operation?.Status,
-                TransactionId = operation?.TransactionId,
-                RespCode = new()
-                {
-                    Code = operation?.RespCode?.Code,
-                    Message = operation?.RespCode?.Message,
-                    UUID = operation?.RespCode?.UUID,
-                },
-                OperationType = operation?.OperationType,
-                PaymentDetails = new()
-                {
-                    CardNumberToken = operation?.PaymentDetails?.CardNumberToken,
-                    Account = operation?.PaymentDetails?.Account,
-                    CardHolderName = operation?.PaymentDetails?.CardHolderName,
-                    CardNumber = operation?.PaymentDetails?.CardNumber,
-                    CardType = operation?.PaymentDetails?.CardType,
-                    ExpDate = operation?.PaymentDetails?.ExpDate,
-                    IssuerBank = operation?.PaymentDetails?.IssuerBank,
-                    IssuerCountry = operation?.PaymentDetails?.IssuerCountry,
-                    ExtraDetails = new()
-                    {
-                        NemuruAuthToken = operation?.PaymentDetails?.ExtraDetails?.GetNemuruAuthToken(),
-                        NemuruTxnId = operation?.PaymentDetails?.ExtraDetails?.GetNemuruTxnId(),
-                        NemuruCartHash = operation?.PaymentDetails?.ExtraDetails?.GetNemuruCartHash(),
-                        NemuruDisableFormEdition = operation?.PaymentDetails?.ExtraDetails?.GetNemuruDisableFormEdition(),
-                        Status = operation?.PaymentDetails?.ExtraDetails?.GetStatus(),
-                        DisableFormEdition = operation?.PaymentDetails?.ExtraDetails?.GetDisableFormEdition()
-                    }
-                },
-                MPI = new()
-                {
-                    AcsTransID = operation?.MPI?.AcsTransID,
-                    AuthMethod = operation?.MPI?.AuthMethod,
-                    AuthTimestamp = operation?.MPI?.AuthTimestamp,
-                    AuthenticationStatus = operation?.MPI?.AuthenticationStatus,
-                    Cavv = operation?.MPI?.Cavv,
-                    Eci = operation?.MPI?.Eci,
-                    MessageVersion = operation?.MPI?.MessageVersion,
-                    ThreeDSSessionData = operation?.MPI?.ThreeDSSessionData,
-                    ThreeDSv2Token = operation?.MPI?.ThreeDSv2Token,
-                },
-                PaymentCode = operation?.PaymentCode,
-                PaymentMessage = operation?.PaymentMessage,
-                Message = operation?.Message,
-                PaymentMethod = operation?.PaymentMethod,
-                PaymentSolution = operation?.PaymentSolution,
-                AuthCode = operation?.AuthCode,
-                Rad = operation?.Rad,
-                RadMessage = operation?.RadMessage,
-                RedirectionResponse = operation?.RedirectionResponse,
-                SubscriptionPlan = operation?.SubscriptionPlan,
-            }).ToList();
         }
     }
 }

@@ -50,7 +50,7 @@ In this section, we explain the generic process of processing transactions. Some
 
 ### Creating Credentials Object
 
-First, instantiate the `Credentials` object with your merchant details. This includes your Merchant ID and Merchant Pass, which are essential for authenticating requests to the AddonPayments API. 
+First, instantiate the `Credentials` object with your merchant details. This includes your Merchant ID and Merchant Pass, which are essential for authenticating requests to the AddonPayments API.
 
 #### Steps
 
@@ -125,7 +125,6 @@ hostedRedirection.SetCancelURL("https://test.com/cancel");
 hostedRedirection.SetForceTokenRequest(false);
 hostedRedirection.SetMerchantParameter("name", "pablo");
 hostedRedirection.SetMerchantParameter("surname", "ferre");
-            
 ```
 
 ### Send Payment Hosted Redirection Request and Retrieve the Response
@@ -137,7 +136,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -170,20 +169,27 @@ namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 ```csharp
 var tcs = new TaskCompletionSource<(string?, string?)>();
 
-await Task.Run(() =>
+try
 {
-    paymentService.SendHostedRecurrentInitial(hostedRecurring, new ResponseListener()
-    {
-        OnErrorAction = (ErrorsEnum error, string message) =>
+    await paymentService.SendHostedPaymentRequest(hostedRedirection, new ResponseListener()
         {
-            tcs.SetResult((null, message));
-        },
-        OnRedirectionURLReceivedAction = (redirectionURL) =>
-        {
-            tcs.SetResult((redirectionURL, null));
-        }
-    });
-});
+                    OnErrorAction = (ErrorsEnum error, string message) =>
+                    {
+                        tcs.SetResult((null, message));
+                    },
+                    OnRedirectionURLReceivedAction = (redirectionURL) =>
+                    {
+                        tcs.SetResult((redirectionURL, null));
+                    }
+
+        });
+}
+catch (Exception ex)
+{
+    // Handle exception
+    Console.WriteLine($"An error occurred: {ex.Message}");
+    tcs.SetResult((null, ex.Message));
+}
 
 var result = await tcs.Task;
 
@@ -206,61 +212,128 @@ An exception will be thrown in case of an error:
 - **ServerException:** In case the endpoint returned 500
 - **ParseException:** In case an exception occurred during the parse
 
-
-
 ### Handle Notification Data
 
-The `Notification` class is responsible for parsing XML or JSON data to extract the required details about a transaction.
+The `Notification` class is responsible for parsing XML or JSON data to extract the required details about a transaction. This includes determining the final result of the payment transaction, such as whether it was approved, declined, or requires additional processing.
 
-#### Web API Controller to Handle HTTP POST Requests
+#### Import Necessary Namespaces
 
-Define an API controller that accepts POST requests and handles the notification string.
-
-1. **Define the API Controller**
+To begin, you need to include the necessary namespaces:
 
 ```csharp
-using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using DotNetPaymentSDK.src.Parameters.Notification;
+using DotNetPayment.Core.Domain.Enums;
+```
 
-namespace YourNamespace
+#### Initialize the Notification Class
+
+Parse the notification string using the `NotificationAdapter` class:
+
+```csharp
+string notificationString = /* Your XML or JSON data here */;
+Notification notification = NotificationAdapter.ParseNotification(notificationString);
+```
+
+#### Retrieve Transaction Details
+
+Once the notification string has been parsed, you can access various transaction details:
+
+```csharp
+// Get transaction ID
+string transactionId = notification.Operations.OperationList.Last().TransactionId;
+
+// Get merchant transaction ID
+string merchantTransactionId = notification.Operations.OperationList.Last().MerchantTransactionId;
+
+// Get payment status
+string status = notification.Operations.OperationList.Last().Status;
+
+// Get payment amount
+decimal amount = notification.Operations.OperationList.Last().Amount;
+
+// Get currency code
+string currency = notification.Operations.OperationList.Last().Currency;
+
+// Get payment solution
+PaymentSolutions paymentSolution = notification.Operations.OperationList.Last().PaymentSolution;
+
+```
+
+#### Processing Notifications
+
+Processing notifications is heavily dependent on the Workflow that is configured for your Merchant. The `Notification` class provides all necessary properties to properly handle the notifications you receive according to the transaction workflow.
+
+For example, you can check if a transaction was approved:
+
+```csharp
+if (notification.Operations.OperationList.Last().Status == "SUCCESS")
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class NotificationController : ControllerBase
+    // Transaction was approved
+    Console.WriteLine("Transaction Completed Successfully");
+}
+else
+{
+    // Transaction was not approved
+    Console.WriteLine("Transaction Not Completed");
+}
+```
+
+#### Full Code Example for Parsing XML
+
+Here's a complete example demonstrating how to parse notification data:
+
+```csharp
+using DotNetPaymentSDK.src.Parameters.Notification;
+using DotNetPayment.Core.Domain.Enums;
+
+public class NotificationProcessor
+{
+    public void ProcessNotification(string notificationString)
     {
-        // POST api/notification
-        [HttpPost]
-        public IActionResult Post([FromBody] string notificationString)
+        try
         {
-            if (string.IsNullOrEmpty(notificationString))
+            // Parse the notification string
+            Notification notification = NotificationAdapter.ParseNotification(notificationString);
+
+            // Get basic transaction details
+            var operation = notification.Operations.OperationList.Last();
+            
+            Console.WriteLine($"Transaction ID: {firstOperation.TransactionId}");
+            Console.WriteLine($"Merchant Transaction ID: {firstOperation.MerchantTransactionId}");
+            Console.WriteLine($"Status: {firstOperation.Status}");
+            Console.WriteLine($"Amount: {firstOperation.Amount}");
+            Console.WriteLine($"Currency: {firstOperation.Currency}");
+            Console.WriteLine($"Payment Solution: {firstOperation.PaymentSolution}");
+            Console.WriteLine($"Service Type: {firstOperation.Service}");
+
+            // Implement your business logic based on the notification data
+            if (operation.Status == "SUCCESS")
             {
-                return BadRequest("Notification string is null or empty.");
+                // Update database with successful transaction
+                UpdateDatabaseWithSuccess(operation.MerchantTransactionId);
             }
-
-            try
+            else
             {
-                // Parse the notification string
-                Notification notification = NotificationAdapter.ParseNotification(notificationString);
-
-                // Simple logic: print notification details to the console
-                var firstOperation = notification.OperationsArray.First();
-                Console.WriteLine($"Notification Received For {firstOperation.Service} with status = {firstOperation.Status}");
-
-                // Return OK (200) status code
-                return Ok();
-            }
-            catch (Exception ex)
-            {
-                // Handle parsing errors or other exceptions
-                return Ok();
+                // Handle failed transaction
+                LogFailedTransaction(operation.MerchantTransactionId, operation.Status);
             }
         }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error processing notification: {ex.Message}");
+            // Handle exceptions appropriately
+        }
+    }
+
+    private void UpdateDatabaseWithSuccess(string MerchantTransactionId)
+    {
+        // Implement database update logic
+    }
+
+    private void LogFailedTransaction(string MerchantTransactionId, string status)
+    {
+        // Implement logging logic
     }
 }
 ```
 
-In this controller:
-- The `Post` method accepts a `notificationString` from the body of the HTTP POST request.
-- It parses the notification string using the `Notification` class, which is designed to handle XML or JSON data.
-- It performs simple logic by printing the notification details to the console.
-- It returns an HTTP 200 status code (`Ok`) to make that AddonPayments knows your endpoint recived the notification.

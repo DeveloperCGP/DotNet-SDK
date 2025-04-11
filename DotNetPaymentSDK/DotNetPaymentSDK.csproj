@@ -3,8 +3,8 @@
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
-    <PackageId>CGP.DotNetSDK</PackageId>
-    <Version>1.0.0</Version>
+    <PackageId>ComerciaGlobalPayments.DotNetSDK</PackageId>
+    <Version>1.0.4</Version>
     <Authors>CGP Developer</Authors>
     <Company>Comercia Global Payments</Company>
   </PropertyGroup>

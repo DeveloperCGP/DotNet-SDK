@@ -12,7 +12,7 @@ using DotNetPaymentSDK.src.Adapters;
 using System.Collections.Generic;
 using DotNetPaymentSDK.src.Parameters.H2H;
 using DotNetPaymentSDK.src.Requests.Utils;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 using DotNetPaymentSDK.src.Exceptions;
 
 namespace DotNetPaymentSDK.Tests
@@ -412,7 +412,7 @@ namespace DotNetPaymentSDK.Tests
             {
                 var responseListener = new Mock<IResponseListener>();
                 responseListener.Setup(listener => listener.OnResponseReceived(It.IsAny<string>(), It.IsAny<Notification>(), It.IsAny<TransactionResult>()))
-                                .Callback<string, Notification, TransactionResult>((raw, notification, transaction) => tcs.SetResult((notification.OperationsArray.Last().Status, null)));
+                                .Callback<string, Notification, TransactionResult>((raw, notification, transaction) => tcs.SetResult((notification?.Operations?.OperationList?.Last().Status, null)));
 
                 responseListener.Setup(listener => listener.OnError(It.IsAny<ErrorsEnum>(), It.IsAny<string>()))
                                 .Callback<ErrorsEnum, string>((error, message) => tcs.SetResult((null, message)));
@@ -472,7 +472,7 @@ namespace DotNetPaymentSDK.Tests
             {
                 var responseListener = new Mock<IResponseListener>();
                 responseListener.Setup(listener => listener.OnResponseReceived(It.IsAny<string>(), It.IsAny<Notification>(), It.IsAny<TransactionResult>()))
-                                .Callback<string, Notification, TransactionResult>((raw, notification, transaction) => tcs.SetResult((notification.OperationsArray.Last().Status, null)));
+                                .Callback<string, Notification, TransactionResult>((raw, notification, transaction) => tcs.SetResult((notification?.Operations?.OperationList?.Last().Status, null)));
 
                 responseListener.Setup(listener => listener.OnError(It.IsAny<ErrorsEnum>(), It.IsAny<string>()))
                                 .Callback<ErrorsEnum, string>((error, message) => tcs.SetResult((null, message)));
@@ -534,7 +534,7 @@ namespace DotNetPaymentSDK.Tests
             {
                 var responseListener = new Mock<IResponseListener>();
                 responseListener.Setup(listener => listener.OnResponseReceived(It.IsAny<string>(), It.IsAny<Notification>(), It.IsAny<TransactionResult>()))
-                                .Callback<string, Notification, TransactionResult>((raw, notification, transaction) => tcs.SetResult((notification.OperationsArray.Last().Status, null)));
+                                .Callback<string, Notification, TransactionResult>((raw, notification, transaction) => tcs.SetResult((notification?.Operations?.OperationList?.Last().Status, null)));
 
                 responseListener.Setup(listener => listener.OnError(It.IsAny<ErrorsEnum>(), It.IsAny<string>()))
                                 .Callback<ErrorsEnum, string>((error, message) => tcs.SetResult((null, message)));

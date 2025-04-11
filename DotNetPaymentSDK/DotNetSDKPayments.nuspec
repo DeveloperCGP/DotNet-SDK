@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
   <metadata>
-    <id>DotNetSDKPayments</id>
-    <version>1.0.0</version>
+    <id>ComerciaGlobalPayments.DotNetSDK</id>
+    <version>1.0.4</version>
     <authors>Comercia Global Payments</authors>
     <owners>Comercia Global Payments</owners>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>

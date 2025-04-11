@@ -126,7 +126,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -268,7 +268,7 @@ public class H2HController : ControllerBase
 // ResponseListener Class Implementation
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -353,7 +353,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks {
     public class ResponseListener : IResponseListener {
@@ -488,7 +488,7 @@ hPaymentAuthorizationParameters.SetCountry(CountryCodeAlpha2.ES);
 // ResponseListener Class Implementation
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -550,7 +550,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks {
     public class ResponseListener : IResponseListener {
@@ -672,7 +672,7 @@ public class H2HController : ControllerBase
 // ResponseListener Class Implementation
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -736,7 +736,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks {
     public class ResponseListener : IResponseListener {
@@ -860,7 +860,7 @@ public class H2HController : ControllerBase
 // ResponseListener Class Implementation
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -949,7 +949,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks {
     public class ResponseListener : IResponseListener {
@@ -1087,7 +1087,7 @@ public class H2HController : ControllerBase
 // ResponseListener Class Implementation
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -1158,7 +1158,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks {
     public class ResponseListener : IResponseListener {
@@ -1290,7 +1290,7 @@ Service;
 // ResponseListener Class Implementation
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {
@@ -1354,7 +1354,7 @@ The response from the payment service is handled using a custom `ResponseListene
 ```csharp
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks {
     public class ResponseListener : IResponseListener {
@@ -1481,7 +1481,7 @@ public class H2HController : ControllerBase
 // ResponseListener Class Implementation
 using DotNetPayment.Core.Domain.Enums;
 using DotNetPaymentSDK.Callbacks;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Integration.Demo.Callbacks
 {

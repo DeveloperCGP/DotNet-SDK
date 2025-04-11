@@ -1,6 +1,6 @@
 using System.Runtime.Serialization;
 
-namespace DotNetPaymentSDK.src.Parameters.Notification.Operation
+namespace DotNetPaymentSDK.src.Parameters.Notification.OperationsModels
 {
     [DataContract]
     public class PaymentDetails
@@ -21,7 +21,5 @@ namespace DotNetPaymentSDK.src.Parameters.Notification.Operation
         public string? IssuerBank { get; set; }
         [DataMember(Name = "issuerCountry", IsRequired = false)]
         public string? IssuerCountry { get; set; }
-        [DataMember(Name = "extraDetails", IsRequired = false)]
-        public ExtraDetails? ExtraDetails { get; set; }
     }
 }

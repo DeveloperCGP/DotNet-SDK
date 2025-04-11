@@ -1,5 +1,5 @@
 using DotNetPayment.Core.Domain.Enums;
-using DotNetPaymentSDK.src.Parameters.Nottification;
+using DotNetPaymentSDK.src.Parameters.Notification;
 
 namespace DotNetPaymentSDK.Callbacks
 {
